@@ -1,0 +1,10 @@
+- hosts:
+  tasks:
+  - name: creating directory and deploying it over ssh
+    file:
+     path: /opt/tomcat/webapps
+     state: directory
+ - name: deploy code using copy module.
+   copy: 
+    src: /opt/webapp/target/webapp.war
+    dest: /opt/tomcat/webapps
